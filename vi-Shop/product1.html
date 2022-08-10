@@ -110,11 +110,47 @@
                                 <i class="fa-solid fa-circle-question"></i>
                                 Trợ giúp</a>
                         </li>
-                        <button class="navbar-item navbar-item--bold navbar-item--sapara js-dangky-btn" >
+                        <button id="dangky" class="navbar-item navbar-item--bold navbar-item--sapara js-dangky-btn" >
                             Đăng ký
                         </button>
-                        <button class="navbar-item navbar-item--bold dangnhap-js ">
-                           Đăng nhập
+                        <button id="dangnhap" class="navbar-item navbar-item--bold dangnhap-js ">
+                            Đăng nhập
+                        </button>
+                        <button  class="admin1">
+                            <span id="taikhoan" class="admin-name1">Minh Vu</span>
+                          
+                            <ul class="admin-info1">
+                                <li class="header-admin1">
+                                    <a href="">Tài khoản của tôi</a>
+                                </li>
+                                <li class="header-admin1">
+                                    <a href="">Địa chỉ của tôi</a>
+                                </li>
+                                <li class="header-admin1">
+                                    <a href="">Đơn mua</a>
+                                </li>
+                                <li class="header-admin1">
+                                    <a href="">Đăng xuất</a>
+                                </li>
+                            </ul>
+                        </button>
+                        <button class="admin">
+                            <img class="admin-img" src="acssets/img/68265229_2173412499434396_5850787656736178176_n.jpg" alt="">
+                            <span class="admin-name">Minh Vu</span>
+                            <ul class="admin-info">
+                                <li class="header-admin">
+                                    <a href="">Tài khoản của tôi</a>
+                                </li>
+                                <li class="header-admin">
+                                    <a href="">Địa chỉ của tôi</a>
+                                </li>
+                                <li class="header-admin">
+                                    <a href="">Đơn mua</a>
+                                </li>
+                                <li class="header-admin">
+                                    <a href="">Đăng xuất</a>
+                                </li>
+                            </ul>
                         </button>
                     </ul>
                 </nav>
@@ -165,10 +201,15 @@
                             <i class="header__cart-icon fa-solid fa-cart-shopping"></i>
                             <span class="header__cart-notice " id="count-item" data-count="0"></span>
                             <!-- no cart list-no-cart -->
+                            
                             <div class="header__cart-list list-no-cart " >
-                               
-                                <img class="cart-list-img" src="acssets/img/no-cart (1).png" alt="">
-                                <span class="cart-list-msg">Chưa có sản phẩm</span>
+                               <div id="list-product" class="list-product">
+                                <li id="list-img1">
+                                </li>
+                                   <!-- <img  class="cart-list-img" src="acssets/img/no-cart (1).png" alt=""> -->
+                                <li id="list-title" class="cart-list-msg"></li>
+                               </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -181,14 +222,14 @@
                 <div class="row container-content thumbai">
                     <div class="col l-6 m-6 c-12">
                         <div class="product__img">
-                            <img  src="acssets/img/vesa.jfif" alt="">
+                            <img id="img1" src="acssets/img/vesa.jfif" alt="">
                         </div>
                         
                     </div>
                     <div class="col l-6 m-6 c-12">
                         <div class="product__info">
-                            <div class="product__header">
-                                <span>Nước Hoa Nam Versace Pour Homme 100ml</span>
+                            <div id="product__header" class="product__header">
+                                <span id="product-title" >Nước Hoa Nam Versace Pour Homme 100ml</span>
                             </div>
                            <div class="rank">
                                <div class="rank-1">
@@ -248,13 +289,13 @@
                                 </div>
                                 <div class="number">
                                     <button class="number-item">
-                                        <i class="ti-minus"></i>
+                                        <i class="fa-solid fa-plus"></i>
                                     </button>
                                     <div class="text">
                                         <input class="text-input" placeholder="1" type="text">
                                     </div>
                                     <button class="number-item">
-                                        <i class="ti-plus"></i>
+                                        <i class="fa-solid fa-minus"></i>
                                     </button>
                                 </div>
                                
@@ -632,10 +673,10 @@
                         
                     </div>
                     <div class="form__inputgruop">
-                        <input type="text" class="form__input" placeholder="Email...">
+                        <input id="Name" type="text" class="form__input" placeholder="Email...">
                     </div>
                     <div class="form__inputgruop">
-                        <input type="password" class="form__input" placeholder="Mật khẩu...">
+                        <input id="Password" type="password" class="form__input" placeholder="Mật khẩu...">
                     </div>
                     <div class="form__inputgruop">
                         <input type="password" class="form__input" placeholder=" Nhập lại mật khẩu...">
@@ -649,7 +690,7 @@
                 </div>
                 <div class="auth-form__controls">
                     <button class="btn back-btn back-js">TRỞ LẠI</button>
-                    <button class="btn  btn--primary">ĐĂNG KÝ</button>
+                    <button onclick="dangky()" class="btn  btn--primary">ĐĂNG KÝ</button>
                 </div>
                 <div class="auth-form__connect">
                     <a href="" class="btn btn-icon-size btn-icon">
@@ -678,10 +719,10 @@
                        
                     </div>
                     <div class="form__inputgruop">
-                        <input type="text" class="form__input" placeholder="Email...">
+                        <input id="email" type="text" class="form__input email" placeholder="Email...">
                     </div>
                     <div class="form__inputgruop">
-                        <input type="password" class="form__input" placeholder="Mật khẩu...">
+                        <input id="pass" type="password" class="form__input pass" placeholder="Mật khẩu...">
                     </div>
                   
                 </div>
@@ -694,7 +735,7 @@
                 </div>
                 <div class="auth-form__controls">
                     <button class="btn back-btn back-btn-js">TRỞ LẠI</button>
-                    <button class="btn  btn--primary">ĐĂNG NHẬP</button>
+                    <button  onclick="dangnhap()" class="btn  btn--primary dangnhap">ĐĂNG NHẬP</button>
                 </div>
                 <div class="auth-form__connect">
                     <a href="" class="btn btn-icon-size btn-icon">
@@ -784,6 +825,7 @@
         const buybtn = document.querySelector('.btn-buy-js')
         buybtn.addEventListener('click',function(e) {
             e.preventDefault();
+
             var parent = $(this).parents('.thumbai');
             var src = parent.find('img').attr('src');
             var carts = $(document).find('.cart-shop');
@@ -809,7 +851,63 @@
                     carts.find('#count-item').text(citem).data('count',citem);
                 },1000);
             },500);
+            
+            const div= document.createElement('div')
+            const content = document.createTextNode("Nước Hoa Nam Versace Pour Homme 100ml")
+            div.appendChild(content)
+            document.getElementById("list-title").appendChild(div)
+
+            const image = document.createElement('img')
+            image.width=75
+            image.height=75
+            image.src  = document.getElementById("img1").src
+            document.getElementById("list-img1").appendChild(image)
+            document.querySelector('.cart-list-img').style.display="none"
+           
         });
+    </script>
+     <!-- js đăng nhập Admin -->
+     <script>
+        var arrayUser = []
+        function dangky() {
+            var user_Name = document.getElementById("Name").value
+            var user_pass = document.getElementById("Password").value
+           var  user = {
+                name :user_Name,
+                pass :user_pass
+            }
+            var user1 = {
+                name :"admin",
+                pass :"12345"
+            }
+            arrayUser.push(user)
+            arrayUser.push(user1)
+            console.log(arrayUser)
+        }
+        function dangnhap() {
+            Login.classList.remove('open1')
+            var email = document.getElementById("email").value
+            var pass = document.getElementById("pass").value
+            if(email=="admin"&& pass=="12345"){  
+                    document.getElementById("dangky").style.display = "none"
+                    document.getElementById("dangnhap").style.display = "none"
+                    var admin = document.querySelector(".admin")
+                    admin.classList.add('open31') 
+            }
+            for(let i=0;i<arrayUser.length;i++) {
+                if(arrayUser[i].name==email && arrayUser[i].pass==pass){
+                        document.getElementById("dangky").style.display = "none"
+                        document.getElementById("dangnhap").style.display = "none"
+                        var admin1 = document.querySelector(".admin1")
+                        admin1.classList.add('open41') 
+                        document.getElementById("taikhoan").innerHTML=email
+                    
+                }
+                
+                
+            }
+            
+        }
     </script>
 </body>
 </html>

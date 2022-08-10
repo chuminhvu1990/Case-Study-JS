@@ -12,16 +12,9 @@
     <link rel="stylesheet" href="acssets/css/reponsive.css">
     <link rel="stylesheet" href="acssets/font/fontawesome-free-6.1.1-web/fontawesome-free-6.1.1-web/css/all.min.css">
      <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-     <link
-     rel="stylesheet"
-     type="text/css"
-     href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
-   />
-   <link
-     rel="stylesheet"
-     type="text/css"
-     href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
-   />
+     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+   <link rel="stylesheet" type="text/css"href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+   
 </head>
 <body>
     <div class="main">
@@ -117,7 +110,7 @@
                                 </div>
                         </li>
                         <li class="navbar-item">
-                            <a href="" class="navbar-item-link">
+                            <a href="#" class="navbar-item-link">
                                 <i class="fa-solid fa-circle-question"></i>
                                 Trợ giúp</a>
                         </li>
@@ -127,11 +120,42 @@
                         <button id="dangnhap" class="navbar-item navbar-item--bold dangnhap-js ">
                             Đăng nhập
                         </button>
+                        <button  class="admin1">
+                            <span id="taikhoan" class="admin-name1">Minh Vu</span>
+                          
+                            <ul class="admin-info1">
+                                <li class="header-admin1">
+                                    <a href="">Tài khoản của tôi</a>
+                                </li>
+                                <li class="header-admin1">
+                                    <a href="">Địa chỉ của tôi</a>
+                                </li>
+                                <li class="header-admin1">
+                                    <a href="">Đơn mua</a>
+                                </li>
+                                <li class="header-admin1">
+                                    <a href="">Đăng xuất</a>
+                                </li>
+                            </ul>
+                        </button>
                         <button class="admin">
                             <img class="admin-img" src="acssets/img/68265229_2173412499434396_5850787656736178176_n.jpg" alt="">
                             <span class="admin-name">Minh Vu</span>
+                            <ul class="admin-info">
+                                <li class="header-admin">
+                                    <a href="">Tài khoản của tôi</a>
+                                </li>
+                                <li class="header-admin">
+                                    <a href="">Địa chỉ của tôi</a>
+                                </li>
+                                <li class="header-admin">
+                                    <a href="">Đơn mua</a>
+                                </li>
+                                <li class="header-admin">
+                                    <a href="">Đăng xuất</a>
+                                </li>
+                            </ul>
                         </button>
-                        <!-- <button id="acount" ></button> -->
                     </ul>
                 </nav>
                 <!-- header with search -->
@@ -1080,10 +1104,10 @@
                         
                     </div>
                     <div class="form__inputgruop">
-                        <input type="text" class="form__input" placeholder="Email...">
+                        <input id="Name" type="text" class="form__input" placeholder="Email...">
                     </div>
                     <div class="form__inputgruop">
-                        <input type="password" class="form__input" placeholder="Mật khẩu...">
+                        <input id="Password" type="password" class="form__input" placeholder="Mật khẩu...">
                     </div>
                     <div class="form__inputgruop">
                         <input type="password" class="form__input" placeholder=" Nhập lại mật khẩu...">
@@ -1097,7 +1121,7 @@
                 </div>
                 <div class="auth-form__controls">
                     <button class="btn back-btn back-js">TRỞ LẠI</button>
-                    <button class="btn  btn--primary">ĐĂNG KÝ</button>
+                    <button onclick="dangky()" class="btn  btn--primary">ĐĂNG KÝ</button>
                 </div>
                 <div class="auth-form__connect">
                     <a href="" class="btn btn-icon-size btn-icon">
@@ -1142,7 +1166,7 @@
                 </div>
                 <div class="auth-form__controls">
                     <button class="btn back-btn back-btn-js">TRỞ LẠI</button>
-                    <button  class="btn  btn--primary dangnhap">ĐĂNG NHẬP</button>
+                    <button  onclick="dangnhap()" class="btn  btn--primary dangnhap">ĐĂNG NHẬP</button>
                 </div>
                 <div class="auth-form__connect">
                     <a href="" class="btn btn-icon-size btn-icon">
@@ -1160,9 +1184,6 @@
             </div>
     </div>
     <script>
-        
-       
-      
         const product = document.querySelector('.product-js')
         product.addEventListener('click',function(event) {
             event.stopPropagation()
@@ -1230,6 +1251,7 @@
             this.classList.toggle('red')
         })
          // End heart
+        //  Đăng ký đăng nhập
         const DangkyBtn = document.querySelector('.js-dangky-btn')
         DangkyBtn.addEventListener('click',function() {
             modal.classList.add('open')
@@ -1289,9 +1311,9 @@
         })  
         Dangnhapmenubtn.addEventListener('click',function(){
             menu.classList.remove('open')
-        })     
+        }) 
+         // End Đăng ký đăng nhập    
     </script>
-
    <!-- Hiệu ứng slide sử dụng thử viện slick -->
     <script
     type="text/javascript"
@@ -1326,39 +1348,49 @@
     </script>
     <!-- js đăng nhập Admin -->
     <script>
-        var dangnhap = document.querySelector(".dangnhap")
-        dangnhap.addEventListener('click', function(){
-            
-            Login.classList.remove('open1')
-            var email = document.querySelector('.email').value
-            var pass = document.querySelector('.pass').value
-            // var email = document.getElementById("email").value
-            // var pass = document.getElementById("pass").value
-                if(email=='vuchuminh@gmail.com'){
-                    if(pass==12345)
-                    {
-            document.getElementById("dangky").style.display = "none"
-            document.getElementById("dangnhap").style.display = "none"
-            var admin = document.querySelector(".admin")
-            admin.classList.add('open3') 
-                    }else {
-                        let pass_true = 12345;
-                        let count = 1;
-                        let pass;
-                        do {
-                        pass = +prompt("Enter password");
-                         alert ("Password is wrong. Please re-enter password");
-                              count++;
-                                    if (count > 5) {
-                                    alert ("You entered wrong more than 5 times. Your account has been locked");
-                                    break;
-                                }
-                        }while (pass != pass_true);
-                    }
+        var arrayUser = []
+        function dangky() {
+            var user_Name = document.getElementById("Name").value
+            var user_pass = document.getElementById("Password").value
+           var  user = {
+                name :user_Name,
+                pass :user_pass
             }
-           
+            var user1 = {
+                name :"admin",
+                pass :"12345"
+            }
+            arrayUser.push(user)
+            arrayUser.push(user1)
+        
+            console.log(arrayUser)
 
-        })
+        }
+        function dangnhap() {
+            Login.classList.remove('open1')
+            var email = document.getElementById("email").value
+            var pass = document.getElementById("pass").value
+            if(email=="admin"&& pass=="12345"){  
+                    document.getElementById("dangky").style.display = "none"
+                    document.getElementById("dangnhap").style.display = "none"
+                    var admin = document.querySelector(".admin")
+                    admin.classList.add('open3') 
+            }
+            for(let i=0;i<arrayUser.length;i++) {
+                if(arrayUser[i].name==email && arrayUser[i].pass==pass){
+                        document.getElementById("dangky").style.display = "none"
+                        document.getElementById("dangnhap").style.display = "none"
+                        var admin1 = document.querySelector(".admin1")
+                        admin1.classList.add('open4') 
+                        document.getElementById("taikhoan").innerHTML=email
+                    
+                }
+                
+                
+            }
+            
+        }
+       
     </script>
     <!-- end admin -->
     <!-- thêm sản phẩm -->
